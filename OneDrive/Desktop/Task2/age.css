@@ -1,0 +1,21 @@
+
+body{
+    background-color: antiquewhite;
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+
+}
+#btn{
+    margin-left: -3%;
+     margin-top: 1%;
+     margin-right: 4%;
+}
+#result{
+    margin-right: 4%;
+}
+h1{
+    color:royalblue;
+}
+
+
