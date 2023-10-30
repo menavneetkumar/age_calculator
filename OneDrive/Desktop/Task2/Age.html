@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Calculator</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            text-align: center;
+            font-weight: 600;
+            font-size: large;
+        
+        }
+        #btn{
+            margin-left: -3%;
+             margin-top: 1%;
+             margin-right: 4%;
+        }
+        #result{
+            margin-right: 4%;
+        }
+        h1{
+            color:royalblue;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <h1>Age Calculator</h1>
+    <form>
+        <label for="dob">Date of Birth:</label>
+        <input type="number" id="day" placeholder="Day" min="1" max="31" required>
+        <input type="number" id="month" placeholder="Month" min="1" max="12" required>
+        <input type="number" id="year" placeholder="Year" min="1900" max="2099" required><br>
+        <label for="calculate" id="btn">Calculate Age</label>
+        <button type="button" id="btn" onclick="calculateAge()">Calculate Age</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateAge() {
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+
+            if (day && month && year) {
+                const dob = new Date(year, month - 1, day); 
+                const today = new Date();
+                const age = today.getFullYear() - dob.getFullYear();
+
+                if (today < new Date(today.getFullYear(), dob.getMonth(), dob.getDate())) {
+                    age--;
+                }
+
+                document.getElementById('result').innerHTML = `Your age is ${age} years.`;
+            } else {
+                document.getElementById('result').innerHTML = "Please enter a valid date of birth.";
+            }
+        }
+    </script>
+</body>
+</html>
